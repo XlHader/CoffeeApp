@@ -116,6 +116,13 @@ You will need to generate the JWT key. You can do this by running the following 
 | :-------- | :------- |
 |`./vendor/bin/sail artisan jwt:secret` | `php artisan jwt:secret`
 
+
+## User Credentials
+
+| Email | Password |
+| :-------- | :------- |
+| `admin@admin.com` | `admin123` |
+
 ## API Documentation
 
 Postman collection is available at the file `postman_collection.json`
