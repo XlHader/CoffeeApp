@@ -35,4 +35,8 @@ class AuthController extends Controller
     public function refresh(): \Illuminate\Http\JsonResponse {
         return $this->authService->refresh();
     }
+
+    public function me(): \Illuminate\Http\JsonResponse {
+        return $this->authService->me();
+    }
 }
