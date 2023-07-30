@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Exceptions\SaleException;
+use App\Http\Resources\Sale\SaleCollection;
 use App\Http\Resources\Sale\SaleResource;
 use App\Models\Product;
 use App\Models\Sale;
@@ -108,5 +109,22 @@ class SaleService
             "message" => "Can't delete a sale",
             "error" => true
         ], 403);
+    }
+
+    /**
+     * Return all sales by a product.
+     * @param int $productId Product id
+     * @throws SaleException Sales not found
+     * @return \Illuminate\Http\JsonResponse Sales data
+     * @throws SaleException Sales not found
+     */
+    public function salesByProduct(int $productId): \Illuminate\Http\JsonResponse
+    {
+        try {
+            $sales = Sale::where('product_id', $productId)->get();
+            return response()->json(new SaleCollection($sales));
+        } catch (\Exception $e) {
+            throw new SaleException($e, 'Sales not found.', 404);
+        }
     }
 }
