@@ -49,4 +49,9 @@ class SaleController extends Controller
     {
         return $this->saleService->delete();
     }
+
+    public function salesByProduct(int $productId)
+    {
+        return $this->saleService->salesByProduct($productId);
+    }
 }
