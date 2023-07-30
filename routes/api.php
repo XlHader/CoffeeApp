@@ -29,6 +29,7 @@ Route::middleware(['jwt.verify'])->group(function () {
         Route::post('/register', [AuthController::class, 'register']);
         Route::get('/refresh', [AuthController::class, 'refresh']);
         Route::post('/logout', [AuthController::class, 'logout']);
+        Route::get('/me', [AuthController::class, 'me']);
     });
 
     /*********************************************
