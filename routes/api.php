@@ -46,4 +46,5 @@ Route::middleware(['jwt.verify'])->group(function () {
      *               Sale Routes                 *
      *********************************************/
     Route::apiResource('sale', SaleController::class);
+    Route::get('sale/product/{id}', [SaleController::class, 'salesByProduct']);
 });
