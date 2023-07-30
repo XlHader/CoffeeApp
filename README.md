@@ -123,6 +123,10 @@ You will need to generate the JWT key. You can do this by running the following 
 | :-------- | :------- |
 | `admin@admin.com` | `admin123` |
 
+## SQL FILES 
+
+SQL files are available in the `sql` folder.
+
 ## API Documentation
 
 Postman collection is available at the file `postman_collection.json`
