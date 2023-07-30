@@ -77,4 +77,16 @@ class AuthService {
             throw new AuthException($e, "Error while logout", 401);
         }
     }
+
+    public function me() {
+        try {
+            $user = JWTAuth::user();
+
+            return response()->json([
+                'user' => $user
+            ]);
+        } catch (\Exception $e) {
+            throw new AuthException($e, "Error while verify token", 401);
+        }
+    }
 }
